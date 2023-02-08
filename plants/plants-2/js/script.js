@@ -33,16 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     })
 
-    btns.forEach(btn => {
-        serviceCards.forEach(serviceCard => {
-            btn.addEventListener('click', () => {
-                btn.classList.add('focus');
-                if (!serviceCard.classList.contains('gardens')) {
-                    serviceCard.classList.add('blur');
-                }
-        })
-        })
-    })
+    
 
 
 })
