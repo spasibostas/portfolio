@@ -1,0 +1,442 @@
+@import "normalizez.scss"
+@import "resets.scss"
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap')
+
+html
+    box-sizing: border-box
+    font-family:'Roboto', sans-serif
+    font-weight: 400
+
+*,*::after,*::before
+    box-sizing: inherit
+
+body
+    min-width: 320px
+    overflow-x: hidden
+
+*
+    box-sizing: border-box
+    font-family:'Roboto', sans-serif
+    font-weight: 400
+
+.container
+    padding-left: 8px
+    padding-right: 4px
+
+.header
+    font-family:'Roboto', sans-serif
+    font-weight: 400
+    position: sticky
+    top: 0px
+    background-color: #FFFFFF
+    box-shadow: 0px 0px 16px rgba(38, 38, 38, 0.16)
+    z-index: 100
+    &__inner
+        display: flex
+        justify-content: space-between
+        align-items: center
+        min-height: 72px
+        padding-right: 12px
+    &__logo
+        padding: 0px
+    &__cab
+        width: 78px
+        height: 40px
+    &__cab-box
+        display: none
+
+.button
+    border: 1px solid #cacaca
+    background-color: white
+    padding: 10px 20px
+    border-radius: 2px
+    transition: background-color 0.3s
+    font-size: 13px
+    &:hover
+        background-color: #efefef
+    &:active
+        background-color: #5cbc61
+        color: #efefef
+        border-color: #5cbc61
+
+.hero
+    height: 255px
+    background: url(../img/tractir.png) no-repeat
+    background-position: center
+    background-size: cover
+    padding-top: 130px
+    &__info
+        height: 180px
+        background: #FFFFFF
+        box-shadow: 0px 0px 16px rgba(117, 117, 117, 0.2)
+        border-radius: 2px
+        padding: 20px 25px
+    &__info-title
+        font-size: 24px
+        text-align: center
+        color: #1D1D1D
+        margin-bottom: 40px
+    &__info-footer
+        display: flex
+        flex-direction: column
+        align-items: center
+        grid-gap: 16px
+    &__info-footer-type
+        font-size: 14px
+
+        color: #626262
+    &__info-footer-time
+        background: #262626
+        border-radius: 16px
+        color: #fff
+        padding: 9px 16px
+        font-size: 12px
+
+.menu
+    display: none
+
+
+.snacks
+    &__content
+        padding-bottom: 40px
+    &__title
+        padding-top: 112px
+        text-align: center
+        font-size: 22px
+        margin-bottom: 12px
+    &__hr
+        border: none
+        background-color:  #757575
+        height: 1px
+        width: 50px
+        mix-blend-mode: normal
+        opacity: 0.7
+        margin: 0 auto
+        margin-bottom: 43px
+    &__dishes
+        display: grid
+        grid-gap: 16px
+        grid-template-columns: 1fr
+    
+.dish-card
+    border: none
+    border-bottom: 1px solid #979797
+    height: 102px
+    display: flex
+    justify-content: space-between
+    overflow: hidden
+    text-decoration: none
+    color: #000000
+    &:hover
+        background-color: #f9f9f9
+    &__desc
+        position: relative
+        padding-top: 5px
+        padding-left: 5px
+        padding-right: 5px
+        min-width: 0
+    &__name
+        font-size: 14px
+        line-height: 24px
+        margin-bottom: 41px
+    &__sub
+        position: absolute
+        left: 5px
+        top: 28px
+        color: #626262
+        font-size: 13px
+        line-height: 21px
+    &__price
+        font-size: 15px
+    &__pic
+        flex-basis: 102px
+        border-radius: 3px 0 0 0 
+
+.footer
+    background:  #262626
+    max-width: 100%
+    min-height: 862px
+    font-family:'Roboto', sans-serif
+    font-weight: 400
+    &__container
+        padding-top: 55px
+    &__logo
+        width: 192px
+        height: 20px
+        margin-bottom: 40px
+    &__hr
+        margin: 0
+        height: 1px
+        border: none
+        border-top: 1px solid #FFFFFF
+        mix-blend-mode: normal
+        opacity: 0.4
+    &__links
+        display: flex
+        flex-flow: column
+        // column-gap: 32px
+    &__links-column
+        display: flex
+        flex-flow: column nowrap
+        flex-basis: 100%
+    &__link
+        margin-bottom: 16px
+    &__link-hashtag
+        font-size: 16px
+        text-decoration: none
+        color: #FFFFFF
+        span
+            color:#49A144
+    &__social
+        display: flex
+        margin-bottom: 40px
+    &__labels
+        display: flex
+        justify-content: center
+        gap: 25px
+        padding-top: 24px
+        padding-bottom: 24px
+        a
+            color: #262626
+    &__legal
+        display: flex
+        flex-flow: column
+        padding-top: 40px
+    a
+        color: white
+        &:hover
+            color: #cacaca
+        &:active
+            color: #5cbc61
+
+.legal-item
+    margin-bottom: 24px
+    &:last-child
+        margin-bottom: 0px
+    &__link
+        text-decoration: none
+        color: #FFFFFF
+        font-size: 11px
+
+.social__link
+    margin-right: 12px
+    img
+        width: 24px
+        height: 24px
+    &:last-child
+        margin-right: 0px
+
+.lang-selector
+    position: relative
+    display: flex
+    align-items: center
+    width: fit-content
+    margin-bottom: 24px
+    margin-left: -32px
+    margin-top: 32px
+    padding-left: 0px
+    img
+        width: 16px
+        height: 16px
+        margin-right: 16px
+    &__choose
+        border-radius: 3px
+        border-color: #3b3b3b
+        color: white
+        font-size: 13px
+        padding: 10px 70px 10px 50px
+        background: url(../icons/arrow-down.svg) 93% / 8% no-repeat #3b3b3b
+        -webkit-appearance: none
+        -moz-appearance: none
+        appearance: none
+        width: 173px
+        &:focus
+            outline: none
+
+.lang-selector > img 
+    position: relative
+    left: 30px
+
+.links-list
+    display: flex
+    flex-flow: column
+    &__item-left
+        margin-bottom: 23px
+        a
+            text-decoration: none
+            color: #FFFFFF
+            font-size: 13px
+    &__item-right
+        margin-bottom: 23px
+        &:last-child
+            margin-bottom: 40px
+        a
+            text-decoration: none
+            color: #FFFFFF
+            font-size: 13px
+
+.scroller-area
+    position: fixed
+    bottom: 24px
+    right: 16px
+    z-index: 2
+    width: 64px
+    height: 64px
+    background: url(../img/arrow.svg) no-repeat
+    background-position: center center
+    border-radius: 5px
+    display: block
+    transition: color 0.3s
+    cursor: pointer
+    background-color: #48b64d
+    &:hover
+        background-color: #3da142
+    &:active
+        background-color: #48b64d
+
+@media  ( min-width: 730px)
+    .container
+        min-width: 730px
+        margin: 0 auto
+    .header
+        &__inner
+            width: 100%
+            padding-right: 45px
+        &__cab
+            display: flex
+            align-items: center
+        &__cab-box
+            display: inline-block
+            width: 40px
+            height: 100%
+            display: flex
+            align-items: center
+        &__cab-button
+            margin-right: 16px
+    .hero
+        height: 364px
+        padding-top: 80px
+        background: url(../img/tractir-md.png) no-repeat
+        background-position: center
+        background-size: cover
+        &__info
+            max-width: 432px
+            width: 100%
+        &__info-title
+            font-size: 36px
+            margin-bottom: 54px
+        &__info-footer
+            display: flex
+            flex-direction: row
+            justify-content: center
+            grid-gap: 66px
+        &__info-footer-type
+            margin: 0px
+    .menu
+        padding-left: 8px
+        display: flex
+        align-items: center
+        height: 80px
+        background: #FFFFFF
+        border-bottom: 1px solid rgba(117, 117, 117, 0.2)
+        &__wrapper
+            display: flex
+            flex-direction: row
+            justify-content: flex-start
+        &__item
+            font-size: 16px
+            margin-right: 40px
+            cursor: pointer
+            color: #626262
+            &:hover
+                color: #327430
+            &:last-child
+                margin-right: 0px
+    .snacks
+        &__content
+            padding-bottom: 48px
+        &__title
+            text-align: left
+            margin-bottom: 27px
+            padding-top: 56px
+        &__hr
+            display: none
+        &__dishes
+            display: grid
+            grid-gap: 32px
+            grid-template-columns: 1fr
+    .dish-card
+        min-height: 160px
+        border: 1px solid rgba(117, 117, 117, 0.2)
+        border-radius: 2px
+        &__desc
+            padding-top: 16px
+            padding-left: 24px
+            padding-right: 24px
+        &__name
+            font-size: 16px
+            margin-bottom: 83px
+        &__sub
+            position: absolute
+            left: 25px
+            top: 34px
+        &__pic
+            flex-basis: 200px
+    .footer
+        min-height: 552px
+        &__links
+            display: flex
+            justify-content: flex-start
+            flex-direction: row 
+        &__links-column
+           flex-basis: 33.33% 
+        &__links-list
+            display: flex
+            flex-flow: row
+            padding-top: 40px
+        &__labels
+            display: flex
+            justify-content: center
+            gap: 40px
+        &__legal
+            display: flex
+            flex-flow: row
+            gap: 90px
+        .links-list__left
+            margin-right: 60px
+    .scroller-area
+        width: 75px
+        height: 75px
+
+@media  (min-width: 1124px)
+    .container
+        min-width: 1124px
+        margin: 0 auto
+        padding-left: 81px
+        padding-right: 87px  
+    .hero
+        &__info
+            max-width: 389px
+            width: 100%
+        &__info-footer
+            grid-gap: 50px
+    .snacks
+        &__dishes
+            display: grid
+            grid-gap: 16px
+            grid-template-columns: 1fr 1fr
+    .dish-card
+        &__desc
+            padding-left: 16px
+            padding-right: 38px
+        &__sub
+            position: absolute
+            left: 17px
+            top: 36px
+        &__pic
+            flex-basis: 170px
+    .footer
+        &__legal
+            gap: 160px
+
+    
