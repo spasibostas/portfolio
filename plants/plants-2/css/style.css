@@ -556,6 +556,8 @@ body {
 }
 .service__cards-item.blur {
   filter: blur(2px);
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
 }
 .service__cards-content {
   text-align: center;
@@ -587,6 +589,12 @@ body {
   border-radius: 5px;
   background: #EDF2EC;
   font-size: 20px;
+}
+.button.active {
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
+  color: #fff;
+  background: #E06733;
 }
 .button_white {
   cursor: pointer;

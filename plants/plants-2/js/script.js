@@ -5,6 +5,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const menuItems = document.querySelectorAll('.nav__menu-item');
     const btns = document.querySelectorAll('.button');
     const serviceCards = document.querySelectorAll('.service__cards-item');
+    const buttonGarden = document.querySelector('button.gardens');
+    const buttonLawn = document.querySelector('button.lawn');
+    const buttonPlanting = document.querySelector('button.planting');
+
 
     burger.addEventListener('click', () => {
         burger.classList.toggle('active');
@@ -33,7 +37,46 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     })
 
+    const onGardenButtonClick = () => {
+        buttonGarden.addEventListener('click', () => {
+            buttonGarden.classList.toggle('active');
+            serviceCards.forEach(serviceCard => {
+                if (serviceCard.classList.contains('lawn') || serviceCard.classList.contains('planting')) {
+                    serviceCard.classList.toggle('blur');
+                }
+            });
+        });
+    }
     
+    const onLawnButtonClick = () => {
+        buttonLawn.addEventListener('click', () => {
+            buttonLawn.classList.toggle('active');
+            serviceCards.forEach(serviceCard => {
+                if (serviceCard.classList.contains('gardens') ||  serviceCard.classList.contains('planting')) {
+                    serviceCard.classList.toggle('blur');
+                }
+            })
+        })
+    }
+
+    const onPlantingButtonClick = () => {
+        buttonPlanting.addEventListener('click', () => {
+            buttonPlanting.classList.toggle('active');
+            serviceCards.forEach(serviceCard => {
+                if (serviceCard.classList.contains('gardens') || serviceCard.classList.contains('lawn')) {
+                    serviceCard.classList.toggle('blur');
+                }
+            })
+        })
+    }
+
+
+    onGardenButtonClick();
+
+    onLawnButtonClick();
+
+    onPlantingButtonClick();
+
 
 
 })

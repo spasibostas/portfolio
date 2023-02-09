@@ -164,6 +164,8 @@ body
             display: block
     &__cards-item.blur
         filter: blur(2px)
+        transition-timing-function: ease-out
+        transition-duration: 0.5s
     &__cards-content
         text-align: center
         padding: 10px 31px 36px 31px
@@ -196,6 +198,11 @@ body
     //     transition-duration: 0.5s
     //     color: #fff
     //     background: #E06733
+    &.active
+        transition-timing-function: ease-out
+        transition-duration: 0.5s
+        color: #fff
+        background: #E06733
     &_white
         cursor: pointer
         font-family: 'Inika'
