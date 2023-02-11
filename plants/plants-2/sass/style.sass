@@ -239,36 +239,121 @@ body
         line-height: 48px
         margin-bottom: 60px
 
+
 .prices-left
-    &__wrapper
-        width: 332px
-        height: 282.01px
-        border: 1px solid #E3E1D5
-        border-radius: 20px
+    width: 332px
+    border: 1px solid #E3E1D5
+    border-radius: 20px
     &__list
         padding: 34px 41px
-    &__item
-        display: flex
-        align-items: center
-        width: 250px
-        height: 50px
-        background: #EDF2EC
-        border-radius: 20px
+
+.accordion
+    width: 100%
+    max-width: 360px
+    background: #FFF
+    -webkit-border-radius: 4px
+    -moz-border-radius: 4px
+    border-radius: 0px
+    li
         margin-bottom: 32px
+        max-height: 162px
         &:last-child
             margin-bottom: 0px
-    &__item-text
-        width: 100px
-        padding: 16px 54px 16px 40px
-        font-size: 20px
-        line-height: 20px
-    &__item-accordion
+    &__item
+        background: #EDF2EC
+        padding-left: 40px
+        height: 50px
+        border-radius: 20px
+        display: flex
+        align-items: center
+    &__btn
+        padding: 0px
+        cursor: pointer
         width: 16px
         height: 16px
         border-radius: 50%
-        background:#D9D9D9 url(../icons/arrow.svg) no-repeat
+        border: none
+        background: #D9D9D9 url(../icons/arrow.svg) no-repeat
         background-position: center center
+    &__link 
+        margin-right: 54px
         cursor: pointer
+        display: block
+        flex: 0 1 100px
+        padding: 0
+        font-size: 20px
+        line-height: 20px
+        position: relative
+        -webkit-transition: all 0.4s ease
+        -o-transition: all 0.4s ease
+        transition: all 0.4s ease
+    &__wrapper
+        position: relative
+        top: -50px
+        left: 0
+        max-height: 0
+        overflow: hidden
+        opacity: 0
+        will-change: max-height
+        transition: all 0.3s ease-out
+        background: #D6E7D2
+        border-radius: 20px
+        &.open
+            opacity: 1
+    &__content
+        padding: 16px 40px 12px 40px
+        hr
+            width: 164px
+            height: 0px
+            border: 0.5px solid #AEA1A1
+            margin: 0px
+            margin-bottom: 6px
+    &__content-item
+        display: flex
+        align-items: center
+        margin-bottom: 12px
+    &__content-link
+        flex: 0 1 100px
+        margin-right: 54px
+        font-size: 20px
+        line-height: 20px
+    &__content-btn
+        padding: 0px
+        cursor: pointer
+        width: 16px
+        height: 16px
+        border-radius: 50%
+        border: none
+        background: #AEA1A1 url(../img/arrow.svg) no-repeat
+        transform: rotate(-180deg)
+        background-position: center center
+    &__content-text
+        font-weight: 300
+        font-size: 10px
+        line-height: 10px
+        color: #717171
+        margin-bottom: 6px
+    &__content-cost
+        font-weight: 400
+        font-size: 12px
+        line-height: 20px
+        margin-bottom: 12px
+        span
+            font-weight: 700
+            font-size: 16px
+            line-height: 20px
+    &__content-order
+        padding: 3px 20px
+        font-weight: 700
+        font-size: 14px
+        line-height: 20px
+        background: #FFFFFF
+        border-radius: 10px
+        border: none
+        cursor: pointer
+        a
+            text-decoration: none
+            color: #717171
 
 .prices-right
     display: inline-flex
