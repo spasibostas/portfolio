@@ -385,32 +385,130 @@ body
         font-weight: 700
         margin-right: 67px
         font-size: 40px
-    &__block
+    &__right
+        display: flex
+        flex-direction: column
+
+.select
+    position: relative
+    width: 450px
+    height: 50px
+    background: #D6E7D2
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    border-radius: 0px
+    margin-top: 91px
+    &.active
+        box-shadow: none
+        background: #C1E698
+        border: 1px solid #D6E7D2
+    &__header
         display: flex
         align-items: center
-        width: 450px
-        height: 50px
-        background: #D6E7D2
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-        border-radius: 0px
-        margin-top: 91px
-    &__block-text
-        font-family: 'Inter'
-        font-weight: 400
-        flex: 0 1 204px
+        justify-content: space-between
+        cursor: pointer
+    &__current
+        display: block
+        flex: 0 0 204px
         font-size: 20px
         line-height: 40px
         letter-spacing: 0.05em
+        color: #717171
         padding: 5px 0px 5px 20px
-        margin-right: 175px
-        color: #717171      
-    &__block-accordion
+    &__icon
         width: 16px
         height: 16px
         border-radius: 50%
         background:#AEA1A1 url(../img/arrow.svg) no-repeat
         background-position: center center
         cursor: pointer
+        margin: 17px 35px 17px 0px
+        transition: all 0.3s ease
+        &.active
+            background:#8BA07E url(../img/arrow.svg) no-repeat
+            background-position: center center
+            transform: rotate(-180deg)
+            transition: all 0.3s ease
+    &__body
+        max-height: 0px
+        width: 450px
+        overflow: hidden
+        position: absolute
+        left: 0
+        top: 100%
+        background: #DCE9D9
+        opacity: 0
+        will-change: max-height
+        transition: all 0.3s ease-out
+        &.active
+            opacity: 1
+            transition: all 0.5s ease
+    &__wrapper
+        padding: 27px 50px 31px 20px
+    &__item
+        width: 380px
+        height: 35px
+        font-size: 16px
+        line-height: 40px
+        letter-spacing: 0.05em
+        border-bottom: 1px solid #D9D9D9
+        cursor: pointer
+        color: $color-green
+        margin-bottom: 12px
+        &:last-child
+            margin-bottom: 0px
+        &:hover
+            color: #717171
+            border-bottom: 1px solid #717171
+
+.adress
+    width: 448px
+    height: 214px
+    background: #EDF2EC
+    border: 1px solid #000000
+    border-radius: 20px
+    text-align: center
+    display: none
+    &.active
+        display: block
+        margin-top: 50px
+    &__info
+        display: flex
+        flex-direction: column
+        font-family: 'Inter'
+        font-weight: 400
+        padding: 17px 76px 0px 35px
+    &__row
+        display: flex
+        justify-content: space-between
+        align-items: center
+        &:last-child
+            margin-bottom: 24px
+    &__key
+        font-size: 16px
+        line-height: 40px
+        letter-spacing: 0.05em
+        color: #000
+    &__key-text
+        font-size: 16px
+        line-height: 40px
+        letter-spacing: 0.05em
+        color: #717171
+    &__btn
+        font-family: 'Inika'
+        font-weight: 700
+        width: 64px
+        border: 1px solid #E06733
+        border-radius: 5px
+        padding: 7px 29px
+        font-size: 10px
+        line-height: 13px
+        text-align: center
+        color: #717171
+        cursor: pointer
+        a
+            text-decoration: none
+            color: #717171
+            
 
 .footer
     font-family: 'Inter'

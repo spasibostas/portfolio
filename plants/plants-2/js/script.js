@@ -192,4 +192,57 @@ window.addEventListener('DOMContentLoaded', () => {
         
     })
 
+
+    const select = function() {
+        const selectButton = document.querySelector('.select__icon');
+        const selectBody = document.querySelector('.select__body');
+        const select = document.querySelector('.select');
+        const selectItems = document.querySelectorAll('.select__item');
+        const adresses = document.querySelectorAll('.adress');
+
+        selectButton.addEventListener('click', () => {
+            selectButton.classList.toggle('active');
+            select.classList.toggle('active');
+            selectBody.classList.toggle('active');
+            
+            if (selectBody.classList.contains('active')) {
+                selectBody.style.maxHeight = selectBody.scrollHeight + 'px'; 
+            } else {
+                selectBody.style.maxHeight = null;
+            }
+
+
+
+
+            selectItems.forEach(item => {
+                item.addEventListener('click', selectChoose)
+            });
+
+            function selectChoose() {
+                let text = this.innerText;
+                let currentText = this.closest('.select').querySelector('.select__current');
+                currentText.innerText = text;
+                selectBody.classList.remove('active');
+                selectButton.classList.remove('active');
+                selectBody.style.maxHeight = null;
+
+                for (let i = 0; i < adresses.length; i++) {
+                    if (this === selectItems[i]) {
+                        adresses[i].classList.add('active');
+                    } else {
+                        adresses[i].classList.remove('active');
+                    }
+                    if (adresses[i].classList.contains('active')) {
+                        selectButton.addEventListener('click', () => {
+                            select.classList.add('active');
+                            adresses[i].classList.remove('active');
+                        })
+                    }
+                }
+            }
+
+        })
+    }
+
+    select();
 })
