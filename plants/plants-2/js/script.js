@@ -37,56 +37,29 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     })
 
+    
+
     const onGardenButtonClick = () => {
         buttonGarden.addEventListener('click', () => {
             buttonGarden.classList.toggle('active');
-            serviceCards.forEach(serviceCard => {
-                if (serviceCard.classList.contains('lawn') || serviceCard.classList.contains('planting')) {
-                    serviceCard.classList.toggle('blur');
-                }
-                if (buttonGarden.classList.contains('active') && buttonLawn.classList.contains('active')) {
-                    serviceCard.classList.toggle('blur');
-                }
-                if (buttonGarden.classList.contains('active') && buttonPlanting.classList.contains('active')) {
-                    serviceCard.classList.toggle('blur');
-                }
-            });
         });
     }
     
     const onLawnButtonClick = () => {
         buttonLawn.addEventListener('click', () => {
             buttonLawn.classList.toggle('active');
-            serviceCards.forEach(serviceCard => {
-                if (serviceCard.classList.contains('gardens') || serviceCard.classList.contains('planting')) {
-                    serviceCard.classList.toggle('blur');
-                }
-                if (buttonLawn.classList.contains('active') && buttonGarden.classList.contains('active')) {
-                    serviceCard.classList.toggle('blur');
-                }
-                if (buttonLawn.classList.contains('active') && buttonPlanting.classList.contains('active')) {
-                    serviceCard.classList.toggle('blur');
-                }
-            })
         })
     }
 
     const onPlantingButtonClick = () => {
         buttonPlanting.addEventListener('click', () => {
             buttonPlanting.classList.toggle('active');
-            serviceCards.forEach(serviceCard => {
-                if (serviceCard.classList.contains('gardens') || serviceCard.classList.contains('lawn')) {
-                    serviceCard.classList.toggle('blur');
-                }
-                if (buttonPlanting.classList.contains('active') && buttonGarden.classList.contains('active')) {
-                    serviceCard.classList.toggle('blur');
-                }
-                if (buttonPlanting.classList.contains('active') && buttonLawn.classList.contains('active')) {
-                    serviceCard.classList.toggle('blur');
-                }
-            })
         })
     }
+
+    buttonGarden.addEventListener('click', () => {
+        
+    });
 
 
     onGardenButtonClick();
@@ -245,4 +218,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     select();
+
+
+
 })
