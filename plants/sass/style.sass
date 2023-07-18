@@ -1,0 +1,843 @@
+@import "normalizez.scss"
+@import "resets.scss"
+@import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@400;700&display=swap')
+
+* 
+    box-sizing: border-box
+
+html
+    scroll-behavior: smooth
+
+*,*::after,*::before
+    box-sizing: inherit
+
+$color-orange:#e06733
+$color-green:#499a18
+
+body
+    overflow-x: hidden
+    font-family: 'Inika'
+    font-weight: 400 
+
+.container
+    padding: 0px 109px 0px 109px
+    max-width: 1220px
+    margin: 0 auto
+
+.welcome
+    position: relative
+    min-height: 666px
+    background: #EDF2EC
+    &__header
+        position: fixed
+        width: 100%
+        top: 0
+        left: 0
+        z-index: 50
+        &:before
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: #EDF2EC
+            z-index: 2
+    &__header-navbar
+        position: relative
+        min-height: 50px
+        padding: 42px 0px 42px 0px
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+    &__header-logo
+        position: relative
+        z-index: 3
+        display: flex
+        align-items: center
+    &__header-burger
+        display: none
+    &__section
+        font-family: 'Inter'
+        font-weight: 400
+        padding: 162px 0px 62px 0px
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__section-img
+        display: block
+    &__section-desc
+        flex: 0 1 549px
+    &__section-title
+        font-weight: 700
+        font-size: 45px
+        color: #717171
+        margin-bottom: 42px
+    &__section-text
+        font-size: 20px
+        line-height: 35px
+        color: #636060
+        margin-bottom: 48px
+    &__section-btn
+        cursor: pointer
+        padding: 14px 27px
+        border: 2px solid #E06733
+        border-radius: 10px
+        background: #EDF2EC
+        &:hover
+            transition-duration: 0.5s
+            transition-timing-function: ease-in
+            color: #fff
+            background: #E06733
+
+.green
+    color: $color-green
+
+.orange
+    color: $color-orange
+
+.nav__menu-list
+    position: relative
+    z-index: 2
+    display: flex
+    flex-direction: row
+    gap: 46px
+    a
+        text-decoration: none
+        color: #010201
+        &:hover
+            color: $color-orange
+            font-weight: 700
+
+
+.about
+    min-height: 666px
+    background: #fff
+    &__section
+        padding: 93px 0px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+    &__section-desc
+        flex: 0 1 605px
+        padding-top: 68px
+    &__section-title
+        font-size: 40px
+        line-height: 52px
+        margin-bottom: 40px
+    &__section-text
+        font-family: 'Inter'
+        font-size: 20px
+        line-height: 30px
+        color: #636060
+    &__section-img
+        display: block
+    
+.service
+    min-height: 1300px
+    background: #EDF2EC
+    &__section
+        padding: 40px 0px 121px 0px
+    &__menu
+        max-width: 1007px
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__menu-title
+        font-size: 40px
+        line-height: 52px
+    &__menu-btns
+        display: flex
+        gap: 38px
+    &__cards
+        padding-top: 80px
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+    &__cards-item
+        font-family: 'Inter'
+        font-weight: 400
+        max-width: 330px
+        margin-bottom: 55px
+        img
+            display: block
+    &__cards-item.blur
+        filter: blur(2px)
+        transition-timing-function: ease-out
+        transition-duration: 0.5s
+    &__cards-content
+        text-align: center
+        padding: 10px 31px 36px 31px
+        border: 1px solid #E3E1D5
+        border-radius: 0px 0px 20px 20px
+    &__cards-title
+        font-weight: 700
+        font-size: 20px
+        line-height: 20px
+        margin-bottom: 10px
+    &__cards-text
+        white-space: nowrap
+        font-size: 16px
+        line-height: 20px
+        color: #717171
+
+.button
+    cursor: pointer
+    font-family: 'Inika'
+    font-weight: 400
+    width: 161px
+    height: 50px
+    padding: 0px
+    border: 1px solid #E06733
+    border-radius: 5px
+    background: #EDF2EC
+    font-size: 20px
+    // &:hover
+    //     transition-timing-function: ease-out
+    //     transition-duration: 0.5s
+    //     color: #fff
+    //     background: #E06733
+    &.active
+        transition-timing-function: ease-out
+        transition-duration: 0.5s
+        color: #fff
+        background: #E06733
+    &_white
+        cursor: pointer
+        font-family: 'Inika'
+        font-weight: 700
+        width: 161px
+        height: 50px
+        padding: 0px
+        border: 1px solid #E06733
+        border-radius: 5px
+        background: #EDF2EC
+        font-size: 20px
+        background: #fff
+        // &:hover
+        //     transition-timing-function: linear
+        //     transition-duration: 0.5s
+        //     color: #fff
+        //     background: #E06733
+
+.prices
+    font-family: 'Inter'
+    font-weight: 700
+    min-height: 560px
+    background: #fff
+    &__section
+        display: flex
+        justify-content: space-between
+        padding: 40px 0px 115px 0px
+    &__section-left
+        display: flex
+        flex-direction: column
+    &__title
+        display: inline-flex
+        font-size: 40px
+        line-height: 48px
+        margin-bottom: 60px
+
+
+.prices-left
+    width: 332px
+    border: 1px solid #E3E1D5
+    border-radius: 20px
+    &__list
+        padding: 34px 41px
+
+.accordion
+    width: 100%
+    max-width: 360px
+    background: #FFF
+    -webkit-border-radius: 4px
+    -moz-border-radius: 4px
+    border-radius: 0px
+    li
+        margin-bottom: 32px
+        max-height: 162px
+        &:last-child
+            margin-bottom: 0px
+    &__item
+        background: #EDF2EC
+        padding-left: 40px
+        height: 50px
+        border-radius: 20px
+        display: flex
+        align-items: center
+    &__btn
+        padding: 0px
+        cursor: pointer
+        width: 16px
+        height: 16px
+        border-radius: 50%
+        border: none
+        background: #D9D9D9 url(../icons/arrow.svg) no-repeat
+        background-position: center center
+    &__link 
+        margin-right: 54px
+        cursor: pointer
+        display: block
+        flex: 0 1 100px
+        padding: 0
+        font-size: 20px
+        line-height: 20px
+        position: relative
+        -webkit-transition: all 0.4s ease
+        -o-transition: all 0.4s ease
+        transition: all 0.4s ease
+    &__wrapper
+        position: relative
+        top: -50px
+        left: 0
+        max-height: 0
+        overflow: hidden
+        opacity: 0
+        will-change: max-height
+        transition: all 0.3s ease-out
+        background: #D6E7D2
+        border-radius: 20px
+        &.open
+            opacity: 1
+    &__content
+        padding: 16px 40px 12px 40px
+        hr
+            width: 164px
+            height: 0px
+            border: 0.5px solid #AEA1A1
+            margin: 0px
+            margin-bottom: 6px
+    &__content-item
+        display: flex
+        align-items: center
+        margin-bottom: 12px
+    &__content-link
+        flex: 0 1 100px
+        margin-right: 54px
+        font-size: 20px
+        line-height: 20px
+    &__content-btn
+        padding: 0px
+        cursor: pointer
+        width: 16px
+        height: 16px
+        border-radius: 50%
+        border: none
+        background: #AEA1A1 url(../img/arrow.svg) no-repeat
+        transform: rotate(-180deg)
+        background-position: center center
+    &__content-text
+        font-weight: 300
+        font-size: 10px
+        line-height: 10px
+        color: #717171
+        margin-bottom: 6px
+    &__content-cost
+        font-weight: 400
+        font-size: 12px
+        line-height: 20px
+        margin-bottom: 12px
+        span
+            font-weight: 700
+            font-size: 16px
+            line-height: 20px
+    &__content-order
+        padding: 3px 20px
+        font-weight: 700
+        font-size: 14px
+        line-height: 20px
+        background: #FFFFFF
+        border-radius: 10px
+        border: none
+        cursor: pointer
+        a
+            text-decoration: none
+            color: #717171
+
+.prices-right
+    display: inline-flex
+    flex-direction: column
+    align-items: flex-end
+    gap: 38px
+    &__text
+        text-align: right
+        width: 452px
+        font-size: 40px
+        line-height: 50px
+    &__img
+        width: 152px
+        height: 174.99px
+        display: block
+
+.contacts
+    min-height: 550px
+    background: #EDF2EC
+    &__section
+        padding-top: 60px
+        display: flex
+    &__img
+        margin-right: 113px
+        img
+            display: block
+    &__title
+        white-space: nowrap
+        font-weight: 700
+        margin-right: 67px
+        font-size: 40px
+    &__right
+        display: flex
+        flex-direction: column
+
+.select
+    position: relative
+    width: 450px
+    height: 50px
+    background: #D6E7D2
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    border-radius: 0px
+    margin-top: 91px
+    &.active
+        box-shadow: none
+        background: #C1E698
+        border: 1px solid #D6E7D2
+    &__header
+        display: flex
+        align-items: center
+        justify-content: space-between
+        cursor: pointer
+    &__current
+        display: block
+        flex: 0 0 204px
+        font-size: 20px
+        line-height: 40px
+        letter-spacing: 0.05em
+        color: #717171
+        padding: 5px 0px 5px 20px
+    &__icon
+        width: 16px
+        height: 16px
+        border-radius: 50%
+        background:#AEA1A1 url(../img/arrow.svg) no-repeat
+        background-position: center center
+        cursor: pointer
+        margin: 17px 35px 17px 0px
+        transition: all 0.3s ease
+        &.active
+            background:#8BA07E url(../img/arrow.svg) no-repeat
+            background-position: center center
+            transform: rotate(-180deg)
+            transition: all 0.3s ease
+    &__body
+        max-height: 0px
+        width: 450px
+        overflow: hidden
+        position: absolute
+        left: 0
+        top: 100%
+        background: #DCE9D9
+        opacity: 0
+        will-change: max-height
+        transition: all 0.3s ease-out
+        &.active
+            opacity: 1
+            transition: all 0.5s ease
+    &__wrapper
+        padding: 27px 50px 31px 20px
+    &__item
+        width: 380px
+        height: 35px
+        font-size: 16px
+        line-height: 40px
+        letter-spacing: 0.05em
+        border-bottom: 1px solid #D9D9D9
+        cursor: pointer
+        color: $color-green
+        margin-bottom: 12px
+        &:last-child
+            margin-bottom: 0px
+        &:hover
+            color: #717171
+            border-bottom: 1px solid #717171
+
+.adress
+    width: 448px
+    height: 214px
+    background: #EDF2EC
+    border: 1px solid #000000
+    border-radius: 20px
+    text-align: center
+    display: none
+    &.active
+        display: block
+        margin-top: 50px
+    &__info
+        display: flex
+        flex-direction: column
+        font-family: 'Inter'
+        font-weight: 400
+        padding: 17px 76px 0px 35px
+    &__row
+        display: flex
+        justify-content: space-between
+        align-items: center
+        &:last-child
+            margin-bottom: 24px
+    &__key
+        font-size: 16px
+        line-height: 40px
+        letter-spacing: 0.05em
+        color: #000
+    &__key-text
+        font-size: 16px
+        line-height: 40px
+        letter-spacing: 0.05em
+        color: #717171
+    &__btn
+        font-family: 'Inika'
+        font-weight: 700
+        width: 64px
+        border: 1px solid #E06733
+        border-radius: 5px
+        padding: 7px 29px
+        font-size: 10px
+        line-height: 13px
+        text-align: center
+        color: #717171
+        cursor: pointer
+        a
+            text-decoration: none
+            color: #717171
+            
+
+.footer
+    font-family: 'Inter'
+    font-weight: 400
+    min-height: 130px
+    background: #fff
+    &__section
+        height: 50px
+        padding: 40px
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &__data
+        display: flex
+        gap: 20px
+    &__label
+        font-size: 20px
+    &__year
+        font-size: 20px
+    &__link
+        font-size: 20px
+        a
+            text-decoration: none
+            color: #000
+    &__school
+        font-size: 20px
+    &__list
+        display: flex
+        gap: 20px
+
+@media (max-width: 768px)
+    .container
+        max-width: 668px
+        padding: 0px 50px 0px 50px
+    .welcome
+        min-height: 537px
+        &__header-navbar
+            min-height: 47px
+            padding: 35px 0px 35px 0px
+        &__section
+            flex-direction: row-reverse
+            align-items: flex-start
+            padding: 140px 0px 40px 0px
+        &__section-img
+            display: block
+            width: 280px
+            height: 254.15px
+        &__section-desc
+            flex: 0 1 310px
+            padding-right: 42px
+        &__section-title
+            font-size: 35px
+            margin-bottom: 30px
+        &__section-text
+            font-size: 16px
+            line-height: 25px
+            margin-bottom: 30px
+    .about
+        min-height: 783px
+        &__section
+            padding: 40px 0px 95px 0px
+            display: flex
+            flex-direction: column
+            align-items: center
+        &__section-desc
+            text-align: center
+            padding: 0px 0px 40px 0px
+            flex: 0 1 350px
+            padding-top: 0px
+        &__section-title
+            font-size: 35px
+            line-height: 46px
+        &__section-img
+            width: 250px
+            height: 258px
+        &__section-text
+            text-align: left
+    .service
+        min-height: 1780px
+        &__menu
+            flex-direction: column
+            align-items: flex-start
+            max-width: 559px
+        &__section
+            padding: 60px 0px 0px 0px
+        &__menu-title
+            font-size: 35px
+            line-height: 46px
+        &__menu-btns
+            padding: 40px 0px  
+        &__cards
+            padding-top: 0px
+        &__cards-item
+            max-width: 281px
+            margin-bottom: 38px
+            img
+                width: 281px
+        &__cards-content
+            padding: 10px 40px 20px 40px
+        &__cards-text
+            white-space: inherit
+    .prices
+        min-height: 585px
+        &__section
+            max-width: 100%
+            padding: 40px 0px 115px 0px
+        &__title
+            font-size: 35px
+            line-height: 42px
+    .prices-right
+        padding-top: 100px
+        gap: 22px
+        &__text
+            width: 296px
+            font-size: 25px
+            line-height: 35px
+    .contacts
+        min-height: 739px
+        &__section
+            flex-direction: column
+            align-items: center
+            padding-top: 40px
+        &__title
+            margin: 0
+            margin-bottom: 100px
+        &__wrapper
+            flex: 1 1 310px
+        &__block
+            order: 1
+            margin: 0
+        &__img
+            margin: 0
+            order: 2
+            img
+                width: 200px
+                height: 248.49px
+    .footer
+        min-height: 181px
+        &__section
+            height: 130px
+            flex-direction: column
+            padding: 33px 0px 18px 0px
+            gap: 16px
+
+@media (max-width: 670px)
+    body.lock
+        overflow: hidden  
+    .welcome__header-burger
+        display: block
+        position: relative 
+        width: 40px
+        height: 24px
+        z-index: 3
+        cursor: pointer
+        span
+            position: absolute
+            border: 2px solid #717171
+            width: 100%
+            left: 0
+            top: 10px
+            transition: all 0.3s ease 0s
+        &.active span
+            transform: scale(0)
+    .welcome__header-burger:before,
+    .welcome__header-burger:after
+        content: ""
+        position: absolute
+        width: 100%
+        border: 2px solid #717171
+        left: 0
+        transition: all 0.3s ease 0s
+    .welcome__header-burger:before
+        top: 0
+    .welcome__header-burger:after
+        bottom: 0
+    .welcome__header-burger.active:before
+        transform: rotate(45deg)
+        top: 10px
+    .welcome__header-burger.active:after
+        transform: rotate(-45deg)
+        bottom: 10px
+    .nav__menu
+        position: fixed
+        top: -100%
+        left: 0
+        width: 100%
+        height: 50%
+        overflow: auto
+        transition: all 0.5s ease 0s
+        background-color: #EDF2EC
+        padding: 140px 10px 0px 10px
+        &-list
+            display: block
+        &-item
+            margin-bottom: 20px
+            a
+                font-size: 40px
+        &.active
+            top: 0
+
+@media ( max-width: 380px)
+    .container
+        max-width: 330px
+        padding: 0px 25px 0px 25px
+    .welcome
+        min-height: 396px
+        &__header-navbar
+            min-height: 24px
+            padding: 36px 0px 36px 0px
+        &__section
+            padding: 120px 0px 24px 0px
+        &__section-desc
+            flex: 0 1 330px
+            padding-right: 0px
+        &__section-title
+            font-size: 25px
+            line-height: 35px
+            margin-bottom: 20px
+        &__section-text
+            margin-bottom: 20px
+        &__section-img
+            display: none
+        &__section-btn
+            padding: 8px 18px
+            font-size: 10px
+            line-height: 20px
+    .nav__menu
+        padding-top: 100px
+    .about
+        min-height: 516px
+        &__section
+            padding: 30px 0px 30px 0px
+        &__section-desc
+            flex: 0 1 310px
+            padding: 0px
+        &__section-title
+            font-size: 25px
+            line-height: 33px
+            margin-bottom: 21.55px
+        &__section-text
+            font-size: 15px
+            line-height: 25px
+        &__section-img
+            width: 150px
+            height: 147px
+    .service
+        &__section
+            padding: 30px 0px 0px 0px
+        &__menu
+            max-width: 252px
+        &__menu-title
+            font-size: 25px
+            line-height: 33px
+        &__menu-btns
+            max-width: 100%
+            gap: 10px
+            padding: 35px 0px 40px 0px
+        &__cards
+            justify-content: center
+        &__cards-content
+            padding: 10px 40px 18px 40px
+        &__cards-item
+            margin-bottom: 34px
+            &:last-child
+                margin-bottom: 27px
+                
+    .prices
+        min-height: 512px
+        &__section
+            flex-direction: column
+            align-items: center
+            padding: 25px 0px 40px 0px
+        &__title
+            justify-content: center
+            font-size: 25px
+            line-height: 30px
+            margin-bottom: 40px
+    .prices-left
+        &__wrapper
+            width: 224px
+            height: 235px   
+        &__list
+            padding: 29px 22px
+        &__item
+            width: 180px
+            height: 50px
+            margin-bottom: 14px
+        &__item-text
+            width: 89px
+            padding: 16px 5px 16px 30px
+            font-size: 15px      
+    .prices-right
+        padding-top: 20px
+        align-items: center
+        gap: 14px
+        &__text
+            text-align: center
+            font-size: 20px
+            line-height: 35px
+        &__img
+            display: none
+    .button
+        width: 121px
+        height: 35px
+        font-size: 15px
+        line-height: 20px
+        &_white
+            width: 121px
+            height: 35px
+            font-size: 15px
+            line-height: 20px
+    .contacts
+        min-height: 445px
+        &__section
+            padding-top: 25px
+        img
+            width: 100px
+            height: 124.25px
+        &__title
+            font-size: 25px
+            line-height: 33px
+            margin-bottom: 80px
+        &__block
+            width: 300px
+            height: 50px
+        &__block-text 
+            margin-right: 40px
+    .footer
+        min-height: 146px
+        &__section
+            height: 117px
+            padding: 22px 0px 7px 0px
