@@ -80,7 +80,7 @@ function showGreeting() {
         bl: 'Добрай ранiцы',
     }
     const timeOfDay = getTimeOfDay();
-    var greetingText = greetingTranslation.bl;
+    var greetingText = greetingTranslation.en;
     // const greetingText = `Good ${timeOfDay}`;
     greeting.textContent = greetingText;
 }
