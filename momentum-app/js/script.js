@@ -79,9 +79,7 @@ function showGreeting() {
         ru: 'Доброе утро',
         bl: 'Добрай ранiцы',
     }
-    const timeOfDay = getTimeOfDay();
     var greetingText = greetingTranslation.en;
-    // const greetingText = `Good ${timeOfDay}`;
     greeting.textContent = greetingText;
 }
 
@@ -247,11 +245,6 @@ playList.forEach(item => {
     li.textContent = item.title;
     playListContainer.append(li);
 });
-
-function stylePlayItems() {
-    const playItems = document.querySelectorAll('.play-item');
-    const playItemsArray = Array.from(playItems);
-}
 
 
 
