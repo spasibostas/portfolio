@@ -162,10 +162,8 @@ body
         margin-bottom: 55px
         img
             display: block
-    &__cards-item.blur
+    &.blur
         filter: blur(2px)
-        transition-timing-function: ease-out
-        transition-duration: 0.5s
     &__cards-content
         text-align: center
         padding: 10px 31px 36px 31px
@@ -193,11 +191,6 @@ body
     border-radius: 5px
     background: #EDF2EC
     font-size: 20px
-    // &:hover
-    //     transition-timing-function: ease-out
-    //     transition-duration: 0.5s
-    //     color: #fff
-    //     background: #E06733
     &.active
         transition-timing-function: ease-out
         transition-duration: 0.5s
@@ -215,11 +208,11 @@ body
         background: #EDF2EC
         font-size: 20px
         background: #fff
-        // &:hover
-        //     transition-timing-function: linear
-        //     transition-duration: 0.5s
-        //     color: #fff
-        //     background: #E06733
+        &:hover
+            transition-timing-function: linear
+            transition-duration: 0.5s
+            color: #fff
+            background: #E06733
 
 .prices
     font-family: 'Inter'
@@ -239,11 +232,7 @@ body
         line-height: 48px
         margin-bottom: 60px
 
-
 .prices-left
-    width: 332px
-    border: 1px solid #E3E1D5
-    border-radius: 20px
     &__list
         padding: 34px 41px
 
@@ -263,9 +252,11 @@ body
         background: #EDF2EC
         padding-left: 40px
         height: 50px
+        width: 240px
         border-radius: 20px
         display: flex
         align-items: center
+        justify-content: space-around;
     &__btn
         padding: 0px
         cursor: pointer
@@ -302,6 +293,7 @@ body
             opacity: 1
     &__content
         padding: 16px 40px 12px 40px
+        width: 200px
         hr
             width: 164px
             height: 0px
@@ -360,6 +352,7 @@ body
     flex-direction: column
     align-items: flex-end
     gap: 38px
+    min-width: 50%
     &__text
         text-align: right
         width: 452px
@@ -388,10 +381,12 @@ body
     &__right
         display: flex
         flex-direction: column
+        max-width: 100%
+        width: 450px
 
 .select
     position: relative
-    width: 450px
+    width: 100%
     height: 50px
     background: #D6E7D2
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
@@ -507,9 +502,8 @@ body
         cursor: pointer
         a
             text-decoration: none
-            color: #717171
-            
-
+            color: #717171    
+    
 .footer
     font-family: 'Inter'
     font-weight: 400
@@ -615,6 +609,10 @@ body
         &__section
             max-width: 100%
             padding: 40px 0px 115px 0px
+            &_left
+                display: flex
+                flex-direction: column
+                min-width: 50%
         &__title
             font-size: 35px
             line-height: 42px
@@ -627,6 +625,7 @@ body
             line-height: 35px
     .contacts
         min-height: 739px
+        position: relative
         &__section
             flex-direction: column
             align-items: center
@@ -642,6 +641,8 @@ body
         &__img
             margin: 0
             order: 2
+            position: absolute
+            bottom: 0
             img
                 width: 200px
                 height: 248.49px
@@ -708,6 +709,23 @@ body
                 font-size: 40px
         &.active
             top: 0
+    .service__cards
+        justify-content: center
+    
+    .prices-left__list
+        padding: 34px 0px
+  
+    .accordion__item
+        padding-left: 10px
+    .accordion__wrapper
+        width: 250px
+
+    .prices-right
+        &__text
+            width: 250px
+            font-size: 20px
+
+  
 
 @media ( max-width: 380px)
     .container
@@ -836,6 +854,12 @@ body
             height: 50px
         &__block-text 
             margin-right: 40px
+    
+    .select
+        margin-bottom: 30px
+        &__wrapper
+            padding: 27px 50px 31px 10px
+
     .footer
         min-height: 146px
         &__section

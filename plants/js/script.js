@@ -3,15 +3,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const burger = document.querySelector('.welcome__header-burger');
     const body = document.querySelector('body');
     const menuItems = document.querySelectorAll('.nav__menu-item');
-    const btns = document.querySelectorAll('.button');
+    const serviceButtons = document.querySelectorAll('.service__menu-btns button');
     const serviceCards = document.querySelectorAll('.service__cards-item');
-    const serviceCardsGardens = document.querySelectorAll('.service__cards-item.gardens');
-    const serviceCardsLawn = document.querySelectorAll('.service__cards-item.lawn');
-    const serviceCardsPlanting = document.querySelectorAll('.service__cards-item.planting');
-    const buttonGarden = document.querySelector('button.gardens');
-    const buttonLawn = document.querySelector('button.lawn');
-    const buttonPlanting = document.querySelector('button.planting');
-
 
     burger.addEventListener('click', () => {
         burger.classList.toggle('active');
@@ -40,72 +33,43 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     })
 
+    function handleServiceButtonClick(event) {
+        const selectedButton = event.target;
 
-    const onGardenButtonClick = () => {
-      buttonGarden.addEventListener("click", () => {
-        buttonGarden.classList.toggle("active");
-        buttonGarden.classList.contains("active")
-          ? serviceCardsLawn.forEach((serviceCardLawn) => {
-              serviceCardLawn.classList.add("blur");
-            })
-          : serviceCardsLawn.forEach((serviceCardLawn) => {
-              serviceCardLawn.classList.remove("blur");
+        if (selectedButton.classList.contains("active")) {
+            selectedButton.classList.remove("active");
+            
+        const activeButtons = Array.from(serviceButtons).filter(button => button.classList.contains("active"));
+
+        if (activeButtons.length === 0) {
+            serviceCards.forEach(card => card.classList.remove("blur"));
+        } else {
+            serviceCards.forEach(card => {
+                const isCardActive = activeButtons.some(button => card.classList.contains(button.id));
+                card.classList.toggle("blur", !isCardActive);
             });
-        buttonGarden.classList.contains("active")
-          ? serviceCardsPlanting.forEach((serviceCardPlanting) => {
-              serviceCardPlanting.classList.add("blur");
-            })
-          : serviceCardsPlanting.forEach((serviceCardPlanting) => {
-              serviceCardPlanting.classList.remove("blur");
+        }
+        } else {
+            serviceButtons.forEach(button => {
+                if (button !== selectedButton) {
+                    button.classList.remove("active");
+                }
             });
-      });
-    };
+            serviceCards.forEach(card => {
+                if (card.classList.contains(selectedButton.id)) {
+                    card.classList.remove("blur");
+                } else {
+                    card.classList.add("blur");
+                }
+            });
     
-    const onLawnButtonClick = () => {
-      buttonLawn.addEventListener("click", () => {
-        buttonLawn.classList.toggle("active");
-        buttonLawn.classList.contains("active")
-          ? serviceCardsGardens.forEach((serviceCardGardens) => {
-              serviceCardGardens.classList.add("blur");
-            })
-          : serviceCardsGardens.forEach((serviceCardGardens) => {
-              serviceCardGardens.classList.remove("blur");
-            });
-        buttonLawn.classList.contains("active")
-          ? serviceCardsPlanting.forEach((serviceCardPlanting) => {
-              serviceCardPlanting.classList.add("blur");
-            })
-          : serviceCardsPlanting.forEach((serviceCardPlanting) => {
-              serviceCardPlanting.classList.remove("blur");
-            });
-      });
-    };
-
-    const onPlantingButtonClick = () => {
-        buttonPlanting.addEventListener('click', () => {
-            buttonPlanting.classList.toggle('active');
-            buttonPlanting.classList.contains('active') ?
-            serviceCardsGardens.forEach((serviceCardGardens) => {
-                serviceCardGardens.classList.add("blur");
-              })
-            : serviceCardsGardens.forEach((serviceCardGardens) => {
-                serviceCardGardens.classList.remove("blur");
-              });
-            buttonPlanting.classList.contains('active') ?
-            serviceCardsLawn.forEach((serviceCardLawn) => {
-                serviceCardLawn.classList.add("blur");
-              })
-            : serviceCardsLawn.forEach((serviceCardLawn) => {
-                serviceCardLawn.classList.remove("blur");
-              });
-        })
+            selectedButton.classList.add("active");
+        }
     }
     
-    onGardenButtonClick();
-
-    onLawnButtonClick();
-
-    onPlantingButtonClick();
+    serviceButtons.forEach(button => {
+        button.addEventListener("click", handleServiceButtonClick);
+    });
 
     const accordionOpenButtons = document.querySelectorAll('.accordion__btn');
     const accordionBasics = document.querySelector('.accordion__wrapper.basics'); 
